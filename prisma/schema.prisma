@@ -16,7 +16,7 @@ model Automation {
   name String
   description String?
 
-  defenition String
+  definition String
   status String
 
   createdAt DateTime @default(now())

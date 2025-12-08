@@ -18,10 +18,10 @@ function Logo({
         fontSize
       )}
     >
-      <div className="rounded-xl bg-gradient-to-r from-purple-500 to-purple-600 p-1">
+      <div className="rounded-xl bg-gradient-to-r from-rose-500 to-rose-600 p-1">
         <ShellIcon size={iconSize} className="stroke-white" />
       </div>
-      <span className="bg-gradient-to-r from-purple-500 to-purple-600 bg-clip-text text-transparent">
+      <span className="bg-gradient-to-r from-rose-500 to-rose-600 bg-clip-text text-transparent">
         Scraper
       </span>
     </Link>

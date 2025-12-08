@@ -121,9 +121,9 @@ export function MobileSidebar() {
                 </Link>
               ))}
             </div>
-            <SheetFooter>
+            <div className="mt-auto">
               <UserNavbar isMobile />
-            </SheetFooter>
+            </div>
           </SheetContent>
         </Sheet>
       </nav>
