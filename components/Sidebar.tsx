@@ -12,7 +12,14 @@ import Link from "next/link";
 import { Button, buttonVariants } from "./ui/button";
 import { usePathname } from "next/navigation";
 import { ModeToggle } from "./ThemeModeToggle";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetFooter,
+  SheetHeader,
+  SheetTrigger,
+} from "./ui/sheet";
+import UserNavbar from "./UserNavbar";
 
 // Here we define all the routes in the application
 const routes = [
@@ -66,8 +73,8 @@ function DesktopSidebar() {
           </Link>
         ))}
       </div>
-      <div className="mt-auto ml-auto justify-end p-2">
-        <ModeToggle />
+      <div className="mt-auto p-1">
+        <UserNavbar />
       </div>
     </div>
   );
@@ -92,11 +99,11 @@ export function MobileSidebar() {
             </Button>
           </SheetTrigger>
           <SheetContent
-            className="w-[400px] sm:w-[540px] space-y-4"
+            className="flex h-full w-[400px] flex-col gap-4 sm:w-[540px]"
             side={"left"}
           >
             <Logo />
-            <div className="flex flex-col gap-1">
+            <div className="flex-1 flex flex-col gap-1 overflow-y-auto">
               {routes.map((route) => (
                 <Link
                   key={route.href}
@@ -114,6 +121,9 @@ export function MobileSidebar() {
                 </Link>
               ))}
             </div>
+            <SheetFooter>
+              <UserNavbar isMobile />
+            </SheetFooter>
           </SheetContent>
         </Sheet>
       </nav>
