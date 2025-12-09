@@ -30,7 +30,7 @@ export default function UserNavbar({
 
   return (
     <SignedIn>
-      <div className="flex items-center hover:bg-secondary/50 rounded-xl p-1">
+      <div className="flex items-center hover:bg-muted-foreground/10 rounded-xl p-1">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <div className="flex w-full items-center justify-between gap-2 cursor-pointer">
@@ -79,10 +79,10 @@ export default function UserNavbar({
 
             <DropdownMenuGroup>
               <DropdownMenuItem asChild>
-                  <div className="flex items-center gap-2">
-                    <CircleUserRound className="mr-2 h-4 w-4" />
-                    Account
-                  </div>
+                <div className="flex items-center gap-2">
+                  <CircleUserRound className="mr-2 h-4 w-4" />
+                  Account
+                </div>
               </DropdownMenuItem>
 
               <DropdownMenuItem asChild>

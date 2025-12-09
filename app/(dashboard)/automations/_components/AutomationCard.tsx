@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils";
 import { AutomationStatus } from "@/types/automation";
 import { Automation } from "@prisma/client";
 import {
+  Edit2Icon,
+  FilePen,
   FileTextIcon,
   MoreVerticalIcon,
   PlayIcon,
@@ -24,9 +26,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 import TooltipWrapper from "@/components/TooltipWrapper";
 import DeleteAutomationDialog from "./DeleteAutomationDialog";
+import { Badge } from "@/components/ui/badge";
 
 const statusColors = {
-  [AutomationStatus.DRAFT]: "bg-yellow-400 text-yellow-600",
+  [AutomationStatus.DRAFT]: "bg-rose-200 text-rose-600",
   [AutomationStatus.PUBLISHED]: "bg-primary",
 };
 
@@ -43,7 +46,7 @@ function AutomationCard({ automation }: { automation: Automation }) {
             )}
           >
             {isDraft ? (
-              <FileTextIcon className="w-5 h-5" />
+              <FilePen className="w-5 h-5" />
             ) : (
               <PlayIcon className="w-5 h-5 text-white" />
             )}
@@ -57,9 +60,7 @@ function AutomationCard({ automation }: { automation: Automation }) {
                 {automation.name}
               </Link>
               {isDraft && (
-                <span className="ml-2 px-2 py-0.5 text-xs font-medium bg-yellow-100 text-yellow-800 rounded-full">
-                  Draft
-                </span>
+                <Badge className="ml-2 font-medium ">Draft</Badge>
               )}
             </h3>
           </div>
@@ -75,7 +76,7 @@ function AutomationCard({ automation }: { automation: Automation }) {
               "flex items-center gap-2"
             )}
           >
-            <ShuffleIcon size={16} />
+            <Edit2Icon size={16} />
             Edit
           </Link>
           <AutomationActions

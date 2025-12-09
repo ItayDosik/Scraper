@@ -34,5 +34,5 @@ export async function CreateAutomation(form: createAutomationSchemaType) {
     throw new Error("failed to create automation");
   }
 
-  redirect(`/automations/editor/${result.id}`);
+  redirect(`/automation/editor/${result.id}`);
 }
